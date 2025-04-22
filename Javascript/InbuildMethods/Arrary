@@ -1,0 +1,154 @@
+// 1.toString()
+let arr1 = [1, 2, 3, 4, 5];
+console.log(arr1.toString());
+
+// 2.toLocaleString()
+let arr2 = [1, 2, 3, 4, 5];
+console.log(arr2.toLocaleString());
+
+// 3.push()
+let arr3 = [1, 2, 3, 4, 5];
+arr3.push(6);
+console.log(arr3);
+
+//4. pop()
+let arr4 = [1, 2, 3, 4, 5];
+arr4.pop();
+console.log(arr4);
+//5. shift()
+let arr5 = [1, 2, 3, 4, 5];
+arr5.shift();
+console.log(arr5);
+//6. unshift()
+let arr6 = [1, 2, 3, 4, 5];
+arr6.unshift(0);
+console.log(arr6);
+//7. splice()
+let arr7 = [1, 2, 3, 4, 5];
+arr7.splice(2, 1);
+console.log(arr7);
+
+//8. slice()
+let arr8 = [1, 2, 3, 4, 5];
+let arr9 = arr8.slice(2);
+console.log(arr9);
+console.log(arr8);
+
+//9. concat()
+let arr10 = [1, 2, 3, 4, 5];
+let arr11 = [6, 7, 8, 9, 10];
+let arr12 = arr10.concat(arr11);
+console.log(arr12);
+//10 join()
+let arr13 = [1, 2, 3, 4, 5];
+let str = arr13.join("-");
+console.log(str);
+//11. reverse()
+let arr14 = [1, 2, 3, 4, 5];
+arr14.reverse();
+console.log(arr14);
+//12. sort()
+let arr15 = [5, 4, 3, 2, 1];
+arr15.sort();
+console.log(arr15);
+// 13.indexOf()
+let arr16 = [1, 2, 3, 4, 5];
+let index = arr16.indexOf(3);
+console.log(index);
+//14.lastIndexOf()
+let arr17 = [1, 2, 3, 4, 5, 3];
+let lastIndex = arr17.lastIndexOf(3);
+
+console.log(lastIndex);
+//15. forEach()
+let arr18 = [1, 2, 3, 4, 5];
+arr18.forEach(function (value, index) {
+  console.log(value);
+});
+
+//16. map()
+let arr19 = [1, 2, 3, 4, 5];
+let arr20 = arr19.map((value, index) => {
+  return value * 2;
+});
+console.log(arr20);
+
+//17. filter()
+let arr21 = [1, 2, 3, 4, 5];
+let arr22 = arr21.filter((value, index) => {
+  return value > 3;
+});
+console.log(arr22);
+//18. reduce()
+let arr23 = [1, 2, 3, 4, 5];
+let sum = arr23.reduce((accumulator, value) => {
+  return accumulator + value;
+});
+console.log(sum);
+//19. reduceRight()
+let arr24 = [1, 2, 3, 4, 5];
+let sum2 = arr24.reduceRight((accumulator, value) => {
+  return accumulator + value;
+});
+
+console.log(sum2);
+//20. every()
+let arr25 = [1, 2, 3, 4, 5];
+let isEvery = arr25.every((value, index) => {
+  return value > 0;
+});
+console.log(isEvery);
+
+//21. some()
+let arr26 = [1, 2, 3, 4, 5];
+let isSome = arr26.some((value, index) => {
+  return value > 3;
+});
+console.log(isSome);
+
+//22. find()
+let arr27 = [1, 2, 3, 4, 5];
+let found = arr27.find((value, index) => {
+  return value > 3;
+});
+console.log(found);
+//23. findIndex()
+let arr28 = [1, 2, 3, 4, 5];
+let foundIndex = arr28.findIndex((value, index) => {
+  return value > 3;
+});
+console.log(foundIndex);
+//24. fill()
+let arr29 = [1, 2, 3, 4, 5];
+arr29.fill(0);
+console.log(arr29);
+//25. copyWithin()
+let arr30 = [1, 2, 3, 4, 5];
+arr30.copyWithin(0, 3);
+console.log(arr30);
+//26. includes()
+
+let arr31 = [1, 2, 3, 4, 5];
+let isIncludes = arr31.includes(3);
+console.log(isIncludes);
+//27. flat()
+let arr32 = [1, 2, [3, 4], 5];
+let arr33 = arr32.flat();
+console.log(arr33);
+//28. flatMap()
+let arr34 = [1, 2, 3, 4, 5];
+let arr35 = arr34.flatMap((value) => {
+  return [value * 2];
+});
+console.log(arr35);
+
+//29. from()
+let arr36 = Array.from("hello");
+console.log(arr36);
+//30. of()
+let arr37 = Array.of(1, 2, 3, 4, 5);
+console.log(arr37);
+//31. isArray()
+let arr38 = [1, 2, 3, 4, 5];
+let isArray = Array.isArray(arr38);
+console.log(isArray);
