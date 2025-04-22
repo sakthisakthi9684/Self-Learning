@@ -1,0 +1,65 @@
+//linked list inbuild methods
+// 1. push -- adds one or more elements to the end of an array and returns the new length of the array.
+// 2. pop  -- removes the last element from an array and returns that element.
+// 3. shift -- removes the first element from an array and returns that removed element.
+// 4. unshift -- adds one or more elements to the beginning of an array and returns the new length of the array.
+// 5. splice -- changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+// 6. slice -- returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array.
+// 7. indexOf -- returns the first index at which a given element can be found in the array, or -1 if it is not present.
+// 8. forEach -- executes a provided function once for each array element. The forEach() method executes the provided callback once for each element present in the array, in order, skipping non-existent elements (empty slots). The forEach() method does not execute the function for empty elements.   
+// 9. map  -- creates a new array populated with the results of calling a provided function on every element in the calling array. The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. The map() method does not execute the function for empty elements.
+// 10. filter  -- creates a new array with all elements that pass the test implemented by the provided function. The filter() method creates a new array with all elements that pass the test implemented by the provided function. The filter() method does not execute the function for empty elements.
+// 11. reduce  -- executes a reducer function (that you provide) on each element of the array, resulting in single output value. The reduce() method executes the callback function once for each element present in the array, excluding empty elements. The return value of the function is stored in an accumulator (result/total). The first time the callback is run, the accumulator and current value can be one of two values. If an initial value was supplied to reduce(), then accumulator will be equal to that initial value. If no initial value was supplied, then accumulator will be equal to the first element in the array. The current value will be equal to the second element in the array.
+// 12. every  -- tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value. The every() method executes the callback function once for each element present in the array until it finds one where callback returns false. If such an element is found, the every() method immediately returns false. Otherwise, if no false element is found, every() returns true. The every() method does not execute the function for empty elements.
+// 13. some   -- tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value. The some() method executes the callback function once for each element present in the array until it finds one where callback returns true. If such an element is found, some() immediately returns true. Otherwise, some() returns false. The some() method does not execute the function for empty elements.
+// 14. find  -- returns the value of the first element in the provided array that satisfies the provided testing function. Otherwise undefined is returned. The find() method executes the callback function once for each element present in the array until it finds one where callback returns true. If such an element is found, find() immediately returns the value of that element. Otherwise, find() returns undefined. The find() method does not execute the function for empty elements.
+// 15. findIndex -- returns the index of the first element in the array that satisfies the provided testing function. If no values satisfy the testing function, -1 is returned. The findIndex() method executes the callback function once for each element present in the array until it finds one where callback returns true. If such an element is found, findIndex() immediately returns the element's index. Otherwise, findIndex() returns -1. The findIndex() method does not execute the function for empty elements.  
+// 16. includes -- determines whether an array includes a certain value among its entries, returning true or false as appropriate. The search is not case-sensitive.  
+// 17. join   -- joins all elements of an array into a string and returns this string. The elements will be separated by a specified separator string. If no separator is provided, the elements are separated by a comma.
+// 18. reverse -- reverses the elements of an array in place.
+// 19. sort -- sorts the elements of an array in place and returns the sorted array. The sort is not necessarily stable. The default sort order is according to string Unicode code points.
+// 20. concat -- returns a new array that is the result of merging two or more arrays. This method does not change the existing arrays.
+// 21. split -- splits a String object into an array of strings by separating the string into substrings.
+// 22. toString -- returns a string representing the specified array and its elements. The elements are converted to strings using their toString() methods, separated by commas.
+// 23. toLocaleString -- returns a string representing the elements of the array. The elements are converted to strings using their toLocaleString() methods, separated by commas. The locale and options parameters are ignored.
+// 24. toJSON -- returns a JSON string representing the specified array and its elements. The elements are converted to strings using their toJSON() methods, separated by commas.
+// 25. toLocaleString -- returns a string representing the elements of the array. The elements are converted to strings using their toLocaleString() methods, separated by commas. The locale and options parameters are ignored. 
+// 26. toLocaleUpperCase -- returns the calling string value converted to uppercase, according to any locale-specific case mappings.
+// 27. toLocaleLowerCase -- returns the calling string value converted to lowercase, according to any locale-specific case mappings.
+// 28. toLocaleDateString -- returns a string representing the date portion of this Date object using locale conventions. The exact format of the string depends on the locale and options parameters.
+// 29. toLocaleTimeString -- returns a string representing the time portion of this Date object using locale conventions. The exact format of the string depends on the locale and options parameters.
+// 30. toLocaleDateString -- returns a string representing the date portion of this Date object using locale conventions. The exact format of the string depends on the locale and options parameters.
+// 31. toLocaleTimeString -- returns a string representing the time portion of this Date object using locale conventions. The exact format of the string depends on the locale and options parameters.
+// 32. toLocaleString -- returns a string representing the date and time portion of this Date object using locale conventions. The exact format of the string depends on the locale and options parameters.
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.push(6)); // 6
+console.log(arr.pop()); // 6
+console.log(arr.shift()); // 1
+console.log(arr.unshift(0)); // 6
+console.log(arr.splice(2, 1)); // [3]
+console.log(arr.slice(2, 4)); // [4, 5]
+console.log(arr.indexOf(2)); // 1
+console.log(arr.forEach((item) => console.log(item))); // 2 4 5
+console.log(arr.map((item) => item * 2)); // [4, 8, 10]
+console.log(arr.filter((item) => item > 2)); // [4, 5]
+console.log(arr.reduce((acc, item) => acc + item, 0)); // 9
+console.log(arr.every((item) => item > 0)); // true
+console.log(arr.some((item) => item > 4)); // true
+console.log(arr.find((item) => item > 2)); // 4
+console.log(arr.findIndex((item) => item > 2)); // 1
+console.log(arr.includes(2)); // true
+console.log(arr.join("-")); // 2-4-5
+console.log(arr.reverse()); // [5, 4, 2]
+console.log(arr.sort()); // [2, 4, 5]
+console.log(arr.concat([6, 7])); // [2, 4, 5, 6, 7]
+console.log(arr.split("")); // ["2", "4", "5"]
+console.log(arr.toString()); // "2,4,5"
+console.log(arr.toLocaleString()); // "2,4,5"
+console.log(arr.toJSON()); // "[2,4,5]"
+console.log(arr.toLocaleUpperCase()); // "2,4,5"
+console.log(arr.toLocaleLowerCase()); // "2,4,5"
+console.log(arr.toLocaleDateString()); // "2/4/2023"
+console.log(arr.toLocaleTimeString()); // "2:4:5 AM"
+console.log(arr.toLocaleDateString()); // "2/4/2023"
+console.log(arr.toLocaleTimeString()); // "2:4:5 AM"
+console.log(arr.toLocaleString()); // "2/4/2023, 2:4:5 AM"
