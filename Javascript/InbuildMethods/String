@@ -1,0 +1,120 @@
+//String inbuild methods
+
+//1. charAt() - returns the character at a specified index (position) in a string
+let str = "Hello World";
+let char = str.charAt(0);
+console.log(char); // H
+
+//2. concat() - joins two or more strings
+let str1 = "Hello";
+let str2 = "World";
+let str3 = str1.concat(" ", str2);
+console.log(str3); // Hello World
+
+//3. includes() - checks if a string contains a specified value
+let str4 = "Hello World";
+let includes = str4.includes("World");
+console.log(includes); // true
+
+//4. indexOf() - returns the index of the first occurrence of a specified value in a string
+let str5 = "Hello World";
+let index = str5.indexOf("o");
+console.log(index); // 4
+
+//5. lastIndexOf() - returns the index of the last occurrence of a specified value in a string
+let str6 = "Hello World";
+let lastIndex = str6.lastIndexOf("o");
+console.log(lastIndex); // 7
+
+//6. length - returns the length of a string
+let str7 = "Hello World";
+let length = str7.length;
+console.log(length); // 11
+
+//7. replace() - replaces a specified value with another value in a string
+let str8 = "Hello World";
+let replacedStr = str8.replace("World", "JavaScript");
+console.log(replacedStr); // Hello JavaScript
+
+//8. slice() - extracts a part of a string and returns it as a new string
+let str9 = "Hello World";
+let slicedStr = str9.slice(0, 5);
+console.log(slicedStr); // Hello
+
+//9. split() - splits a string into an array of substrings
+let str10 = "Hello World";
+let splitStr = str10.split(" ");
+console.log(splitStr); // [ 'Hello', 'World' ]
+
+//10. toLowerCase() - converts a string to lowercase
+let str11 = "Hello World";
+let lowerStr = str11.toLowerCase();
+console.log(lowerStr); // hello world
+
+//11. toUpperCase() - converts a string to uppercase
+let str12 = "Hello World";
+let upperStr = str12.toUpperCase();
+console.log(upperStr); // HELLO WORLD
+
+//12. trim() - removes whitespace from both sides of a string
+let str13 = "   Hello World   ";
+let trimmedStr = str13.trim();
+console.log(trimmedStr); // Hello World
+
+//13. substring() - returns a part of the string between two specified indices
+let str14 = "Hello World";
+let substringStr = str14.substring(0, 5);
+console.log(substringStr); // Hello
+
+//14. startsWith() - checks if a string starts with a specified value
+let str15 = "Hello World";
+let startsWith = str15.startsWith("Hello");
+console.log(startsWith); // true
+
+//15. endsWith() - checks if a string ends with a specified value
+let str16 = "Hello World";
+let endsWith = str16.endsWith("World");
+console.log(endsWith); // true
+
+//16. repeat() - returns a new string with a specified number of copies of the original string
+let str17 = "Hello";
+let repeatedStr = str17.repeat(3);
+console.log(repeatedStr); // HelloHelloHello
+
+//17. valueOf() - returns the primitive value of a string object
+let str18 = new String("Hello World");
+let valueOfStr = str18.valueOf();
+console.log(valueOfStr); // Hello World
+
+//18. search() - searches a string for a specified value and returns the position of the match
+let str19 = "Hello World";
+let searchStr = str19.search("World");
+console.log(searchStr); // 6
+
+//19. match() - retrieves the matches when matching a string against a regular expression
+let str20 = "Hello World";
+let matchStr = str20.match(/l/g);
+console.log(matchStr); // [ 'o', 'o' ]
+
+//20. localeCompare() - compares two strings in the current locale
+let str21 = "Hello";
+let str22 = "World";
+let localeCompare = str21.localeCompare(str22);
+console.log(localeCompare); // -1 (because "Hello" comes before "World")
+
+//21. fromCharCode() - converts Unicode values to characters
+let charCode = String.fromCharCode(72, 101, 108, 108, 111);
+console.log(charCode); // Hello
+
+//22. codePointAt() - returns a number that represents the Unicode of the character at a specified position
+let str23 = "Hello";
+let codePoint = str23.codePointAt(0);
+console.log(codePoint); // 72 (Unicode of 'H')
+
+
+
+
+
+
+
+
