@@ -1,0 +1,86 @@
+const express = require("express");
+const { pool, db } = require("../config/db");
+
+const testRouter = express.Router();
+
+// GET all test records
+testRouter.get("/api", (req, res) => {
+  const query = `SELECT * FROM Test`;
+  const {a,b}=req.body;
+
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("[ERROR] /test/api:", err.message || err);
+      return res.status(500).json({
+        success: false,
+        message: "Failed to fetch dashboard data",
+      });
+    }
+
+    // Check if we have results and if 'action' is a valid function string
+    if (results && results.length > 0) {
+      const actionString = results[1].action;  // For example, using the second record (index 1)
+      console.log("Stored function string:", actionString);
+
+      try {
+        // Using Function constructor to dynamically evaluate the string as a function
+        const dynamicFunction = new Function("return " + actionString)();
+
+        // Call the function with parameters (1 and 2)
+        const result = dynamicFunction(a,b);  // This will call the function with arguments 1 and 2
+        console.log("Result of function execution:", result);
+
+        return res.status(200).json({
+          success: true,
+          message: "Dashboard data fetched successfully",
+          data: results.reverse(),
+          functionResult: result,  // Include the function result in the response
+        });
+      } catch (e) {
+        console.error("[ERROR] Function execution failed:", e.message || e);
+        return res.status(500).json({
+          success: false,
+          message: "Failed to execute stored function",
+        });
+      }
+    } else {
+      return res.status(404).json({
+        success: false,
+        message: "No data found",
+      });
+    }
+  });
+});
+
+// POST to add new test data (with 'action' field)
+testRouter.post("/add", (req, res) => {
+  const { action } = req.body;
+
+  if (!action) {
+    return res.status(400).json({
+      success: false,
+      message: "'action' field is required",
+    });
+  }
+
+  const query = `INSERT INTO Test (action) VALUES (?)`;
+  const params = [action];
+
+  db.query(query, params, (err, result) => {
+    if (err) {
+      console.error("[ERROR] /test/add:", err.message || err);
+      return res.status(500).json({
+        success: false,
+        message: "Failed to add test data",
+      });
+    }
+
+    return res.status(201).json({
+      success: true,
+      message: "Test data added successfully",
+      insertedId: result.insertId,
+    });
+  });
+});
+
+module.exports = { testRouter };
